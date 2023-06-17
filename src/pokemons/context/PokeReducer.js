@@ -12,7 +12,6 @@ export const pokeReducer = (state = initialState, action) => {
 
   switch (action.type) {
     case types.getPokemons:
-      console.log(state)
       return {
         ...state,
         ...action.payload,

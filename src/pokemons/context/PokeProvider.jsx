@@ -38,7 +38,6 @@ export const PokeProvider = ({ children }) => {
   }
 
   const getMorePokemonsAsync = async ( url ) =>{
-    console.log(url)
     const { data } = await getMorePokemons( url )
     const { previous, next, results, count } = data
     dispatch({

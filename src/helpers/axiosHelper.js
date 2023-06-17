@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseUrl = 'https://pokeapi.co/api/v2/';
+const baseUrl = 'https://pokeapi.co/api/v2';
 
 
 export const axiosInstance = axios.create({
@@ -10,7 +10,7 @@ export const axiosInstance = axios.create({
 
 export const getPokemons = async (limit = 30, offset = 0) => {
   try {
-    const { data } = await axiosInstance.get(`pokemon?limit=${limit}&offset=${offset}`);
+    const { data } = await axiosInstance.get(`/pokemon?limit=${limit}&offset=${offset}`);
     return {data };
   } catch (error) {
     console.error(error);
@@ -25,4 +25,14 @@ export const getMorePokemons = async (url) => {
   } catch (error) {
     console.error(error);
   }
+}
+
+export const getSelectedPokemon = async (url) => {
+  try{
+    const { data } = await axiosInstance.get(url);
+    return { data };
+  }catch (error) {
+    console.error(error);
+  }
+
 }
