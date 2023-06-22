@@ -10,6 +10,7 @@ const initialState = {
   next: null,
   limit: 20,
   pokemonSelected: {},
+  allPokemons: [],
 }
 
 
@@ -19,6 +20,7 @@ export const PokeProvider = ({ children }) => {
   const limit = 20
   useEffect(() => {
     getPokemonsAsync()
+    getAllPokemonsAsync()
   
   }, [])
 
@@ -59,7 +61,14 @@ export const PokeProvider = ({ children }) => {
     })
   }
   
-
+  const getAllPokemonsAsync = async () => {
+    const { data } = await getPokemons(10000 )
+    const { results } = data
+    dispatch({
+      type: types.getAllPokemons,
+      payload: results
+    })
+  }
   return (
     <PokeContext.Provider value={{ 
       ...authState ,

@@ -1,8 +1,9 @@
 import axios from "axios";
-import { useContext, useMemo, useState } from "react";
-import "../styles/typeColors.css";
+import { useContext, useEffect, useState } from "react";
+
 import { useNavigate } from "react-router-dom";
 import { PokeContext } from "../context/PokeContext";
+import { PokeType } from "./PokeType";
 
 
 export const PokeItem = ({ result }) => {
@@ -25,7 +26,7 @@ export const PokeItem = ({ result }) => {
     navigate(`/pokemon/${name}`)
   }
 
-  useMemo(() => {
+  useEffect(() => {
     if(result){
       getPokemon()
     }
@@ -64,7 +65,7 @@ export const PokeItem = ({ result }) => {
             <h2 className="text-2xl font-bold text-gray-800">{name}</h2>
             <div className="flex flex-row items-center justify-center w-48 h-48">
               {types?.map(({ type }, index) => (
-                  <span key={index} className={`text-sm mr-2 type font-bold ${type.name}` }></span>
+                <PokeType key={index} type={type}/>
                 
               ))}
             </div>

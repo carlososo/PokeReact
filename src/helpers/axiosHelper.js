@@ -34,5 +34,4 @@ export const getSelectedPokemon = async (url) => {
   }catch (error) {
     console.error(error);
   }
-
 }

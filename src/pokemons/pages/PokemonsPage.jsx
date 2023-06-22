@@ -6,9 +6,15 @@ import { Pagination } from "../components/Pagination"
 export const PokemonsPage = () => {
   const { results } = useContext(PokeContext)
 
+
   return (
     <>
-      <PokeList results={results}/>
+      {
+        results ?
+        <PokeList results={results}/>
+        :
+        <p>Cargando...</p>
+      }
       <Pagination/>
     </>
     

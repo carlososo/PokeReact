@@ -6,6 +6,7 @@ const initialState = {
   next: null,
   limit: 30,
   pokemonSelected: {},
+  allPokemons: [],
 }
 
 export const pokeReducer = (state = initialState, action) => {
@@ -20,6 +21,12 @@ export const pokeReducer = (state = initialState, action) => {
         return {
           ...state,
           pokemonSelected: action.payload
+        }
+      }
+      case types.getAllPokemons:{
+        return {
+          ...state,
+          allPokemons: action.payload
         }
       }
     default:

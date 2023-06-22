@@ -7,7 +7,7 @@ export const PokeRouter = () => {
   return (
     <>
       <NavBar/>
-      <div className="container mx-auto">
+      <div >
         <Routes>
           <Route path="pokemon/:PokeId" element={<PokemonById/>} />
           <Route path="search" element={<PokemonSearch/>} />

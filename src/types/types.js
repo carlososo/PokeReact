@@ -1,15 +1,6 @@
 export const types = {
   getPokemons: '[POKEMON] Get Pokemons',
   setPokemonSelected: '[POKEMON] Get Pokemon',
-  // getTypes: '[POKEMON] Get Types',
-  // getAbilities: '[POKEMON] Get Abilities',
-  // getMoves: '[POKEMON] Get Moves',
-  // getItems: '[POKEMON] Get Items',
-  // getLocations: '[POKEMON] Get Locations',
-  // getGames: '[POKEMON] Get Games',
-  // getGenerations: '[POKEMON] Get Generations',
-  // getRegions: '[POKEMON] Get Regions',
-  // getForms: '[POKEMON] Get Forms',
-  // getNatures: '[POKEMON] Get Natures',
-  // getEggGroups: '[POKEMON] Get Egg Groups',  
+  getAllPokemons: '[POKEMON] Get All Pokemons',
+
 }
